@@ -1,0 +1,11 @@
+package test;
+
+public class testtest {
+	public static void main(String[] args) {
+		StringBuffer[] sb = new StringBuffer[4];
+		
+		sb[0] = new StringBuffer();
+		sb[0].append(1);
+		
+	}
+}
