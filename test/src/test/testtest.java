@@ -7,11 +7,9 @@ public class testtest {
 		int k = 2;
 		
 		StringBuffer[] sb = new StringBuffer[id_list.length];
-        for(StringBuffer s : sb) {
-            s = new StringBuffer();
-            s.append(" ");
-        }
-            
+        for(int i = 0; i<sb.length; i++)
+        	sb[i] = new StringBuffer();
+        
         
         int[] c = new int[id_list.length];
         int space = 0;
@@ -44,6 +42,10 @@ public class testtest {
                 }
             }
         }
-
+        
+        
+        for(int i : answer)
+        	System.out.print(answer + " ");
+		
 	}
 }
