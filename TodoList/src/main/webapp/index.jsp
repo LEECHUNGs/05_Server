@@ -31,6 +31,8 @@
 					</div>
 					
 					<button>로그인</button>
+					
+					<a href="/signup" class="signup">회원가입</a>
 				</form>
 			
 			</c:when>
@@ -39,22 +41,26 @@
 			<c:otherwise>
 				<h1>${sessionScope.loginMember.memberNickname}의 투 두 리스트</h1>
 				
-				<%-- 투두리스트가 있다면 --%>
-				<%-- 투두리스트가 없다면 --%>
 				<c:choose>
+				<%-- 투두리스트가 없다면 --%>
 					<c:when test="${empty todoList}">
 						<h2>할 일이 하나도 없네요!</h2>
 					</c:when>
 					
 					<c:otherwise>
+				<%-- 투두리스트가 있다면 --%>
 						<table>
 							<c:forEach var="todo" items="${todoList}">
 								<tr>
 									<td>${todo.todoTitle}</td>
-									<td>${todo.todoMemo}</td>
-									<td>${todo.totodDate}</td>
-									<td><a class="update-btn">수정</a></td>
-									<td><a class="delete-btn">삭제</a></td>
+									<td>(${todo.todoMemo})</td>
+									<td>${todo.tododDate}</td>
+									<td><a href="/update?todoNo=${todo.todoNo}"
+											class="update-btn">수정</a></td>
+									<td><a href="/delete?todoNo=${todo.todoNo}" 
+											onclick="return confirm('정말 삭제하시겠습니까?')" 
+											class="delete-btn">삭제</a>
+									</td>
 								</tr>
 							</c:forEach>
 							
@@ -65,8 +71,8 @@
 				
 				
 				<div class="button-div">
-					<a class="insert-btn">등록하기</a>
-					<a class="logout-btn" href="logout">로그아웃</a>
+					<a href="/insert" class="insert-btn">등록하기</a>
+					<a href="/logout" class="logout-btn">로그아웃</a>
 				</div>
 				
 				

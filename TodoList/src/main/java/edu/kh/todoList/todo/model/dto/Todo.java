@@ -15,6 +15,6 @@ public class Todo {
 	private int todoNo;
 	private String todoTitle;
 	private String todoMemo;
-	private String totodDate;
+	private String tododDate;
 	private String todoDeleteFlag;
 }
