@@ -7,6 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>노래 목록</title>
+	<link rel="stylesheet" href="/resources/css/default.css">
 	<script src="https://kit.fontawesome.com/2bc76866e9.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -43,16 +44,19 @@
 					<c:choose>
 						<c:when test="${sessionScope.loginMember.memberNo == 1}">
 							<th>
-								<a href="/songDelete?songNo=${song.songNo}" class="fa-solid fa-trash"></a>
+								<a href="/song/delete?songNo=${song.songNo}" 
+									class="fa-solid fa-trash"
+									onclick="return confirm('정말 삭제하시겠습니까?')">
+								</a>
 							</th>
 							<th>
-								<a href="/songUpdate?songNo=${song.songNo}" class="fa-solid fa-wrench"></a>
+								<a href="/song/update?songNo=${song.songNo}" class="fa-solid fa-wrench"></a>
 							</th>
 						</c:when>
 						
 						<c:otherwise>
 							<th>
-								<a href="/playlistAdd?songNo=${song.songNo}" class="fa-solid fa-plus"></a>							
+								<a href="/playLists/insert?songNo=${song.songNo}" class="fa-solid fa-plus"></a>							
 							</th>
 						</c:otherwise>
 					</c:choose>
@@ -63,5 +67,15 @@
 		</table>
 
 	</main>
+	
+	<c:if test="${not empty sessionScope.message}">
+		<script>
+			alert('${message}');
+	
+		</script>
+		
+		<c:remove var="message"/>
+	</c:if>
+	
 </body>
 </html>

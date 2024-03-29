@@ -14,4 +14,22 @@
 		VALUES(SEQ_SONG_NO.NEXTVAL, ?, ?, ?, DEFAULT, DEFAULT)
 	</entry>
 	
+	<entry key="selectOne">
+		SELECT SONG_NO, SONG_TITLE, SONG_ARTIST, SONG_ALBUM
+		FROM SONG
+		WHERE SONG_DEL_FL = 'N'
+		AND SONG_NO = ?
+	</entry>
+	
+	<entry key="update">
+		UPDATE SONG SET SONG_TITLE = ?, SONG_ARTIST = ?, SONG_ALBUM = ?
+		WHERE SONG_DEL_FL = 'N'
+		AND SONG_NO = ?
+	</entry>
+	
+	<entry key="delete">
+		UPDATE SONG SET SONG_DEL_FL = 'Y'
+		WHERE SONG_NO = ?
+	</entry>
+	
 </properties>

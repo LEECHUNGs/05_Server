@@ -5,9 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<title>PlayList 회원가입</title>
-	</head>
+	<link rel="stylesheet" href="/resources/css/default.css">
+</head>
 <body>
 	<header><h1>회원정보 입력</h1></header>
 	<main>

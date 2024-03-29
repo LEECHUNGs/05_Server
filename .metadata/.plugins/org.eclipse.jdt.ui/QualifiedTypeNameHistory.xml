@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="edu.kh.jsp.model.dto.Pizza"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
     <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="edu.kh.jsp.model.dto.Book"/>
@@ -16,7 +15,6 @@
     <fullyQualifiedTypeName name="edu.kh.todoList.todo.model.service.TodoService"/>
     <fullyQualifiedTypeName name="edu.kh.todoList.todo.model.dto.Todo"/>
     <fullyQualifiedTypeName name="edu.kh.todoList.member.model.dto.Member"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -26,19 +24,28 @@
     <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.IDebugRequestor"/>
     <fullyQualifiedTypeName name="edu.kh.playlist.member.model.service.MemberService"/>
     <fullyQualifiedTypeName name="edu.kh.playlist.member.dto.Member"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.plsong.model.dao.PlSongDAO"/>
+    <fullyQualifiedTypeName name="edu.kh.todoList.common.JDBCTemplate"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.playlists.model.dto.PlayList"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.plsong.model.dto.PlSong"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.member.model.dto.Member"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.song.model.service.SongListService"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.plsong.model.service.PlSongService"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="edu.kh.todoList.common.JDBCTemplate"/>
     <fullyQualifiedTypeName name="edu.kh.playlist.song.dto.Song"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
-    <fullyQualifiedTypeName name="edu.kh.playlist.song.model.service.SongListService"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.ServletException"/>
+    <fullyQualifiedTypeName name="edu.kh.playlist.playlists.model.service.PlayListService"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

@@ -37,7 +37,7 @@ public class SongListDAO {
 	 * @param conn
 	 * @return
 	 */
-	public List<Song> songList(Connection conn) throws Exception{
+	public List<Song> selectAll(Connection conn) throws Exception{
 		List<Song> songList = new ArrayList<Song>();
 		
 		try {
@@ -74,7 +74,7 @@ public class SongListDAO {
 	 * @param songAlbum
 	 * @return result
 	 */
-	public int songAdd(Connection conn, String songTitle, String songArtist, String songAlbum) throws Exception{
+	public int insert(Connection conn, String songTitle, String songArtist, String songAlbum) throws Exception{
 		int result = 0;
 		
 		try {
@@ -84,6 +84,87 @@ public class SongListDAO {
 			pstmt.setString(1, songTitle);
 			pstmt.setString(2, songArtist);
 			pstmt.setString(3, songAlbum);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 수정할 노래 탐색 SQL 수행 DAO
+	 * @param conn
+	 * @param songNo
+	 * @return song
+	 */
+	public Song selectOne(Connection conn, String songNo) throws Exception{
+		Song song = null;
+		
+		try {
+			String sql = prop.getProperty("selectOne");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, songNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				song = new Song();
+				song.setSongNo(rs.getInt(1));
+				song.setSongTitle(rs.getString(2));
+				song.setSongArtist(rs.getString(3));
+				song.setSongAlbum(rs.getString(4));
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return song;
+	}
+
+	/** 노래 수정 SQL 수행 DAO
+	 * @param conn
+	 * @param song
+	 * @return result
+	 */
+	public int update(Connection conn, Song song) throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("update");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, song.getSongTitle());
+			pstmt.setString(2, song.getSongArtist());
+			pstmt.setString(3, song.getSongAlbum());
+			pstmt.setInt(4, song.getSongNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 노래 삭제 SQL 수행 DAO
+	 * @param conn
+	 * @param songNo
+	 * @return result
+	 */
+	public int delete(Connection conn, int songNo) throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("delete");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, songNo);
 			
 			result = pstmt.executeUpdate();
 			

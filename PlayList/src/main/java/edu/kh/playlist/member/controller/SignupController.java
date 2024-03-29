@@ -10,13 +10,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/signup")
+@WebServlet("/member/signup")
 public class SignupController extends HttpServlet{
 	
 	// 회원가입 버튼을 누르면 실행
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/signup.jsp").forward(req, resp);
 	}
 	
 	// 회원가입 실행

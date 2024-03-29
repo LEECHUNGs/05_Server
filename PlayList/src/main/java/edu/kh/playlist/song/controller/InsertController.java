@@ -10,13 +10,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/songAdd")
-public class SongAddController extends HttpServlet{
+@WebServlet("/song/insert")
+public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.getRequestDispatcher("WEB-INF/views/songAdd.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/song/insert.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class SongAddController extends HttpServlet{
 			String songArtist = req.getParameter("songArtist");
 			String songAlbum = req.getParameter("songAlbum");
 			
-			int result = service.songAdd(songTitle, songArtist, songAlbum);
+			int result = service.insert(songTitle, songArtist, songAlbum);
 			
 			HttpSession session = req.getSession();
 			if(result > 0) {

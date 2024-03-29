@@ -5,11 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+	<link rel="stylesheet" href="/resources/css/default.css">
 </head>
 <body>
 	<main>
-		<section class="songAdd-section">
-			<form action="/songAdd" method="post">
+		<section class="songInsert-section">
+			<form action="/song/insert" method="post">
 				<div>
 					<p>노래 제목</p>
 					<input type="text" name="songTitle" required>

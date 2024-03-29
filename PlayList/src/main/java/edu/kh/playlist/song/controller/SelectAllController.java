@@ -12,20 +12,20 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/songList")
-public class SongListController extends HttpServlet{
+@WebServlet("/song/selectAll")
+public class SelectAllController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
 			SongListService service = new SongListService();
 			
-			List<Song> songList = service.songList();
+			List<Song> songList = service.selectAll();
 			
 			if(!songList.isEmpty()) {
 				req.setAttribute("songList", songList);
 				
-				req.getRequestDispatcher("/WEB-INF/views/songList.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/views/song/selectAll.jsp").forward(req, resp);
 				
 			} else {
 				HttpSession session = req.getSession();
